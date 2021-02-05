@@ -1,6 +1,6 @@
-let floors = 4; //how many floors
+let floors = 6; //how many floors
 
-buildTower(floors); //function call
+//buildTower(floors); //function call
 
 //print the return using iteration method 😁
 
@@ -14,6 +14,7 @@ e.g.
 [
   '*'
 ]
+
 *****[tower of 3 floors]*****
 [
   '  *  ', 
@@ -30,4 +31,37 @@ e.g.
   '***********'
 ]
 */
-function buildTower(nFloors) {}
+
+function buildTower(nFloors) {
+  
+  const  tower=[];
+ if(nFloors>1){
+ for(let i=0;i<nFloors;i++){
+  let space=" ";
+  let star="*";
+  space =space.repeat(nFloors-i-1);
+   for(var j=1; j<= i; j++){
+    star=star +"**"
+  
+
+   }
+  
+   tower.push("'"+space+star+space+"'")
+   
+  }
+  } else {
+    tower.push("*");
+
+  }
+ 
+return tower;
+ 
+ 
+    
+}
+
+let output =buildTower(floors);
+for(let i=0; i<output.length; i++){
+   console.log(output[i]);
+}
+
